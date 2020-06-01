@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://script/Player.gd" type="Script" id=1]
+
+[sub_resource type="CapsuleShape" id=1]
+
+[sub_resource type="CapsuleMesh" id=2]
+
+[sub_resource type="CubeMesh" id=3]
+
+[node name="Player" type="KinematicBody"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="CollisionShape"]
+transform = Transform( 1, -2.98023e-08, 7.10543e-15, 2.98023e-08, 1, 1.42109e-14, -4.23516e-22, 1.42109e-14, 1, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Arm" type="Spatial" parent="CollisionShape"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, -2.87454e-07, -1.76438 )
+
+[node name="MeshInstance" type="MeshInstance" parent="CollisionShape/Arm"]
+transform = Transform( 0.153726, 0, 0, 0, 0.0910239, 0, 0, 0, 0.600801, 0, -1.08904, -1.04461 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="CameraBase" type="Spatial" parent="."]
+
+[node name="CameraRot" type="Spatial" parent="CameraBase"]
+
+[node name="Camera" type="Camera" parent="CameraBase/CameraRot"]
+transform = Transform( 1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 5, 5 )
+
+[node name="Label1" type="Label" parent="."]
+margin_right = 54.0
+margin_bottom = 14.0
+text = "5s1d65s"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = -0.568802
+margin_top = 17.064
+margin_right = 53.4312
+margin_bottom = 31.064
+text = "5s1d65s"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_top = 36.4031
+margin_right = 54.0
+margin_bottom = 50.4031
+text = "5s1d65s"
+__meta__ = {
+"_edit_use_anchors_": false
+}
